@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const OfficerContainer = styled.div`
   background-color: #fff;
   max-width: 40%;
+  max-height: 500px;
   display: inline-block;
   margin: 10px;
   border-radius: 50.28px;
@@ -20,12 +21,19 @@ export const ImgWrapper = styled.div``;
 export const Img = styled.img`
   width: 80%;
 `;
+
 export const SocialIconLink = styled.a`
   color: #000000;
   font-size: 25px;
   padding: 26px;
+
+  &:hover {
+    color: #04509d;
+  }
 `;
+
 export const TextWrapper = styled.div``;
+
 export const Name = styled.p`
   font-weight: 500;
   font-size: 1.5rem;

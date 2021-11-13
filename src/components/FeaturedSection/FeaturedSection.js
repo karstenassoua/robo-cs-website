@@ -10,6 +10,7 @@ import {
   Subtitle,
   ImgWrapper,
   Img,
+  EventArrow
 } from "./FeaturedSection.elements";
 
 const FeaturedSection = ({
@@ -36,6 +37,7 @@ const FeaturedSection = ({
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
               </TextWrapper>
+              <EventArrow src={require("../../images/scroll-arrow.png").default} />
             </FeatColumn>
             <FeatColumn>
               <ImgWrapper start={start}>

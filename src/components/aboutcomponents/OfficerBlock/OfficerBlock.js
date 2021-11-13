@@ -1,7 +1,6 @@
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-
 import {
   OfficerContainer,
   ImgWrapper,
@@ -11,6 +10,7 @@ import {
   Name,
   Role,
 } from "./OfficerBlock.elements";
+
 const OfficerBlock = ({ img, alt, href1, href2, name, role }) => {
   return (
     <>
@@ -19,7 +19,7 @@ const OfficerBlock = ({ img, alt, href1, href2, name, role }) => {
           <Img src={img} alt={alt} />
         </ImgWrapper>
         <SocialIconLink href={href1} target="_blank" aria-label="Email">
-          <MdEmail />
+          <MdEmail /> 
         </SocialIconLink>
         <SocialIconLink href={href2} target="_blank" aria-label="Linkedin">
           <FaLinkedin />

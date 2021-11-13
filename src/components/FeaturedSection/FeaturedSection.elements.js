@@ -38,6 +38,7 @@ export const FeatColumn = styled.div`
     flex-basis: 100%;
     display: flex;
     justify-content: center;
+    margin-left: 10vw;
   }
 `;
 
@@ -80,6 +81,7 @@ export const TopLine = styled.div`
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 1px;
+  margin-top: 50px;
   margin-bottom: 12px;
   text-transform: uppercase;
 `;
@@ -122,4 +124,26 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: ${({ lightTextDesc }) => (lightTextDesc ? "#f7f8fa" : "#1c2237")};
+`;
+
+export const EventArrow = styled.img`
+  margin-top: 5vh;
+  margin-left: 30vh;
+  display: block;
+  width: 3%;
+  animation: bounce 2s ease infinite;
+
+  @keyframes bounce {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  50% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(-10%);
+  }
+}
 `;

@@ -40,7 +40,7 @@ const HeroSection = ({
                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                <Link to="https://docs.google.com/forms/d/e/1FAIpQLSfGBsV48QxMO7t2-10hvCn79EqSC2WetRL2pxNtbrVHlvS-WA/viewform?usp=sf_link">
+                <Link to="/login">
                   <Button heroButton={heroButton} primary={primary}>
                     {buttonLabel}
                   </Button>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import { Button } from "../../../globalStyles";
 import {
   FaDiscord,
@@ -23,7 +24,9 @@ function Footer() {
       <SocialMedia>
         <SocialMediaWrap>
           <WebsiteRights>Robinson Computer Science Club © 2020</WebsiteRights>
-          <Button primary>Join</Button>
+          <Link to="/login">
+            <Button primary>LOG IN</Button>
+          </Link>
           <SocialIcons>
             <SocialIconLink
               href="https://discord.com/invite/bNfwGJQH9e"

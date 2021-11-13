@@ -8,7 +8,9 @@ export const heroObjOne = {
   headline: "Learning and building the future together.",
   description: `Scroll for some more of our news.`,
   buttonLabel: "Join",
+  buttonLink: "/login",
   buttonLabel2: "Events",
+  buttonLink2: "/events",
   imgStart: "",  // Empty: image right, "True": image left
   img: require("../../images/ram-code-new.svg").default,
   alt: "Credit Card",
@@ -26,6 +28,7 @@ export const homeObjOne = {
   headline: "CREATE",
   description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
 We work on projects relating to programming, and explore different topics of computer science.`,
+  buttonLink: "/about",
   buttonLabel: "Learn more",
   imgStart: "true",
   img: require("../../images/cs-classroom.png").default,
@@ -43,6 +46,7 @@ export const homeObjTwo = {
   headline: "COLLABORATE",
   description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
 We work on projects relating to programming, and explore different topics of computer science.`,
+  buttonLink: "/about",
   buttonLabel: "About us",
   imgStart: "",
   img: require("../../images/game-creation.png").default,
@@ -60,6 +64,7 @@ export const homeObjThree = {
   headline: "EXPLORE",
   description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
 We work on projects relating to programming, and explore different topics of computer science.`,
+  buttonLink: "/about",
   buttonLabel: "See updates",
   imgStart: "start",
   img: require("../../images/cs-lecture.jpeg").default,
