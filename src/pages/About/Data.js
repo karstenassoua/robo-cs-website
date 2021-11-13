@@ -1,9 +1,9 @@
 export const aboutObjOne = {
   primary: true,
-  lightBg: true,
-  lightTopLine: false,
-  lightText: true,
-  lightTextDesc: false,
+  lightBg: false,
+  lightTopLine: true,
+  lightText: false,
+  lightTextDesc: true,
   topLine: "About the club",
   headline: "CS at Robinson",
   description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
