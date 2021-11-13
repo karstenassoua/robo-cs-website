@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../../globalStyles";
+import { Container } from "../../../globalStyles";
 import { officerObjOne, officerObjTwo } from "./Data"
 import OfficerBlock from "../OfficerBlock/OfficerBlock";
 import {

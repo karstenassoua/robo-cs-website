@@ -5,7 +5,7 @@ export const heroObjOne = {
   lightText: false,
   lightTextDesc: true,
   topLine: "Robinson Computer Science Club",
-  headline: "Stuff.",
+  headline: "About Us",
   description: `Scroll for some more of our news.`,
   buttonLabel: "Join",
   buttonLabel2: "Events",

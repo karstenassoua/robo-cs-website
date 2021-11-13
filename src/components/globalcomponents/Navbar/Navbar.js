@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { Button } from '../../globalStyles';
+import { Button } from '../../../globalStyles';
 import {
   Nav,
   NavbarContainer,
@@ -62,11 +62,11 @@ function Navbar() {
               </NavItem>
               <NavItemBtn>
                 {button ? (
-                  <NavBtnLink to="/">
-                    <Button primary>JOIN</Button>
+                  <NavBtnLink to="/login">
+                    <Button primary>LOG IN</Button>
                   </NavBtnLink>
                 ) : (
-                  <NavBtnLink top="/">
+                  <NavBtnLink top="/login">
                     <Button onClick={closeMobileMenu} primary>
                       JOIN
                     </Button>
@@ -75,12 +75,12 @@ function Navbar() {
               </NavItemBtn>
               <NavItemBtn>
                 {button ? (
-                  <NavBtnLink to="/events">
-                    <Button>EVENTS</Button>
+                  <NavBtnLink to="/signup">
+                    <Button primary>SIGN UP</Button>
                   </NavBtnLink>
                 ) : (
-                  <NavBtnLink top="/events">
-                    <Button onClick={closeMobileMenu}>EVENTS</Button>
+                  <NavBtnLink top="/signup">
+                    <Button onClick={closeMobileMenu}>SIGN UP</Button>
                   </NavBtnLink>
                 )}
               </NavItemBtn>

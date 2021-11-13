@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FeatSec = styled.div`
   color: #fff;
   padding: 130px 0;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   align-items: center;
   justify-content: center;
 

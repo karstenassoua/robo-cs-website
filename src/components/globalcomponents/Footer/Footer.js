@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../../globalStyles";
+import { Button } from "../../../globalStyles";
 import {
-    FaDiscord,
+  FaDiscord,
   FaInstagram,
   FaYoutube,
   FaTwitter,

@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     background-color: #012053;
+    height: 100%;
     background-image: url("https://i.imgur.com/ZCHxoGV.png?1");
 }
 
@@ -49,6 +50,7 @@ export const Button = styled.button`
   border-radius: 40px;
   background: ${({ primary }) => (primary ? "#FDC500" : "#00509D")};
   white-space: nowrap;
+  width: ${({ wide }) => (wide ? "400px" : "")};
   padding: ${({ big }) => (big ? "10px 64px" : "8px 20px")};
   color: ${({ primary }) => (primary ? "#012053" : "#fff")};
   font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};

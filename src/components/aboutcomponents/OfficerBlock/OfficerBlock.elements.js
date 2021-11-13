@@ -9,11 +9,11 @@ export const OfficerContainer = styled.div`
   padding: 27px;
   text-align: center;
 
-  &:hover {
+  /* &:hover {
     transition: all 0.3s ease-out;
     transform: scale(1.07);
     border: 3px solid #04509d;
-  }
+  } */
 `;
 export const ImgWrapper = styled.div``;
 

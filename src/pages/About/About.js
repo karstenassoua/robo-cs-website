@@ -3,7 +3,7 @@ import { heroObjOne, aboutObjOne, aboutObjTwo } from "./Data";
 import ScrollToTop from "../../components/ScrollToTop";
 import InfoSection from "../../components/InfoSection/InfoSection";
 import StatSection from "../../components/StatSection/StatSection";
-import MemberSection from "../../components/MemberSection/MemberSection";
+import MemberSection from "../../components/aboutcomponents/MemberSection/MemberSection";
 
 const About = () => {
   return (

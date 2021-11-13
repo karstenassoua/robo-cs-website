@@ -8,6 +8,10 @@ export const InfoSec = styled.div`
   justify-content: center;
   background: ${({ lightBg }) => (lightBg ? "#fff" : "#032C76")};
   overflow: hidden;
+
+  a {
+    color: #fff;
+  }
 `;
 
 export const InfoRow = styled.div`
