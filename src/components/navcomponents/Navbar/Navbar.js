@@ -42,7 +42,7 @@ function Navbar() {
         <Nav>
           <NavbarContainer>
             <NavLogo to="/">
-              <NavIcon src="https://i.imgur.com/uIqo8hj.png" alt="ROBO CS" />
+              <NavIcon src={require("../../../images/robo-logo-circle.png").default} alt="ROBO CS" />
             </NavLogo>
             <MobileIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}

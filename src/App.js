@@ -12,9 +12,9 @@ import { Navbar, Footer } from "./components";
 
 import Login from "./components/authcomponents/Login/Login"
 import Signup from "./components/authcomponents/Signup/Signup"
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/authcomponents/Dashboard/Dashboard"
 
-import UpdateProfile from "./components/UpdateProfile"
+import UpdateProfile from "./components/authcomponents/UpdateProfile/UpdateProfile"
 // import { Container } from "react-bootstrap";
 import PrivateRoute from "./components/PrivateRoute"
 import ForgotPassword from "./components/authcomponents/ForgotPassword/ForgotPassword"
@@ -30,15 +30,15 @@ function App() {
         <Route path="/events" exact component={Events}></Route>
         <Route path="/about" exact component={About}></Route>
       </Switch>
-        <AuthProvider>
-          <Switch>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-            <Route path="/forgot-password" component={ForgotPassword} />
-          </Switch>
-        </AuthProvider>
+      <AuthProvider>
+        <Switch>
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+          <Route path="/forgot-password" component={ForgotPassword} />
+        </Switch>
+      </AuthProvider>
       <Footer />
     </Router>
   );

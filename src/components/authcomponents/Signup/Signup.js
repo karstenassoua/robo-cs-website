@@ -48,7 +48,7 @@ export default function Signup() {
                 <SignupCard>
                     <SignupForm onSubmit={handleSubmit}>
                         <SignupInput type="email" ref={emailRef} placeholder="email" required />
-                        <SignupInput type="password" ref={passwordRef} placeholder="password" required />
+                        <SignupInput type="password" ref={passwordRef} placeholder="password (6+ characters)" required />
                         <SignupInput type="password" ref={passwordConfirmRef} placeholder="confirm password" required />
                         <ButtonWrapper>
                             <Button big wide disabled={loading} type="submit">

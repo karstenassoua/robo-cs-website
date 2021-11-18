@@ -27,7 +27,7 @@ export default function Login() {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/dashboard")
         } catch {
             setError("Failed to log in. Make sure your email and password are correct.")
         }
@@ -43,10 +43,10 @@ export default function Login() {
                     <LoginCard>
                         <LoginForm onSubmit={handleSubmit}>
                             <LoginInput type="email" ref={emailRef} placeholder="email" required />
-                            <LoginInput type="password" ref={passwordRef} placeholder="password" required />
+                            <LoginInput type="password" ref={passwordRef} placeholder="password (6+ characters)" required />
                             <ButtonWrapper>
                                 <Button big wide disabled={loading} type="submit">
-                                    Sign up
+                                    Log in
                                 </Button>
                             </ButtonWrapper>
                         </LoginForm>
