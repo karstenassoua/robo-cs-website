@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useAuth } from "../../../contexts/AuthContext"
+import React from "react";
+import toast, { Toaster } from 'react-hot-toast';
+import { useAuth } from "../../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "../../../globalStyles";
 import {
@@ -21,23 +22,25 @@ import {
 
 function Footer() {
   const { currentUser, logout } = useAuth();
-  const [error, setError] = useState();
   const history = useHistory()
 
   async function handleLogout() {
-    setError("")
-
     try {
       await logout()
       history.push("/login")
+      toast.success("Logged out.")
     } catch {
-      setError("Failed to log out :(")
+      toast.error("Failed to log out :(")
     }
   }
 
   return (
+  <>
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
     <FooterContainer>
-      {error && [error]}
       <SocialMedia>
         <SocialMediaWrap>
           <WebsiteRights>Robinson Computer Science Club © 2020</WebsiteRights>
@@ -84,6 +87,7 @@ function Footer() {
         </SocialMediaWrap>
       </SocialMedia>
     </FooterContainer>
+  </>
   );
 }
 

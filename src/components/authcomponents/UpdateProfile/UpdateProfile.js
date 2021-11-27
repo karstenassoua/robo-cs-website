@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast'; 
 import { Button } from "../../../globalStyles"
-import { Alert } from "react-bootstrap"
 import { useAuth } from "../../../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
 import {
@@ -18,7 +18,6 @@ export default function Signup() {
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const { currentUser, updatePassword, updateEmail } = useAuth()
-    const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
@@ -26,12 +25,12 @@ export default function Signup() {
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError("Passwords do not match!")
+            toast.error("Passwords do not match!")
+            return null;
         }
 
         const promises = []
         setLoading(true)
-        setError("")
 
         if (emailRef.current.value !== currentUser.email) {
             promises.push(updateEmail(emailRef.current.value))
@@ -43,8 +42,9 @@ export default function Signup() {
 
         Promise.all(promises).then(() => {
             history.push("/")
+            toast.success("Account updated successfully.")
         }).catch(() => {
-            setError("Failed to update account.")
+            toast.error("Failed to update account.")
         }).finally(() => {
             setLoading(false)
         })
@@ -52,9 +52,12 @@ export default function Signup() {
 
     return (
         <>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <UpdateSec>
                 <Heading>Update Profile</Heading>
-                {error && <Alert variant="danger">{error}</Alert>}
                 <UpdateCard>
                     <UpdateForm onSubmit={handleSubmit}>
                         <UpdateInput type="email" ref={emailRef} required placeholder={currentUser.email} />

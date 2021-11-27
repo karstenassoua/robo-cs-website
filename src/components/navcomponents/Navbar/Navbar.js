@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from "../../../contexts/AuthContext"
-import { useHistory } from "react-router-dom"
+import toast, { Toaster } from 'react-hot-toast';
+import { useAuth } from "../../../contexts/AuthContext";
+import { useHistory } from "react-router-dom";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../../globalStyles';
@@ -19,7 +20,6 @@ import {
 
 function Navbar() {
   const { currentUser, logout } = useAuth();
-  const [error, setError] = useState("")
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const history = useHistory()
@@ -36,13 +36,12 @@ function Navbar() {
   };
 
   async function handleLogout() {
-    setError("")
-
     try {
       await logout()
       history.push("/login")
+      toast.success("Logged out.")
     } catch {
-      setError("Failed to log out :(")
+      toast.error("Failed to log out :(")
     }
   }
 
@@ -54,10 +53,13 @@ function Navbar() {
 
 return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav>
           <NavbarContainer>
-            {error && [error]}
             <NavLogo to="/">
               <NavIcon src={require("../../../images/robo-logo-circle.png").default} alt="ROBO CS" />
             </NavLogo>

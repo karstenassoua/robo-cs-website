@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import toast, { Toaster } from 'react-hot-toast';
 import { Button } from "../../../globalStyles";
 import { useAuth } from "../../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
@@ -16,7 +17,6 @@ export default function Login() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const { login } = useAuth()
-    const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
@@ -24,12 +24,12 @@ export default function Login() {
         e.preventDefault()
 
         try {
-            setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             history.push("/dashboard")
+            toast.success("Successfully logged in.")
         } catch {
-            setError("Failed to log in. Make sure your email and password are correct.")
+            toast.error("Failed to log in. Make sure your email and password are correct.")
         }
 
         setLoading(false)
@@ -37,9 +37,12 @@ export default function Login() {
 
     return (
         <>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <LoginSec>
                     <Heading>Welcome back!</Heading>
-                    {error && [error]}
                     <LoginCard>
                         <LoginForm onSubmit={handleSubmit}>
                             <LoginInput type="email" ref={emailRef} placeholder="email" required />

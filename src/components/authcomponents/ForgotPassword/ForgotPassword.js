@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import toast, { Toaster } from 'react-hot-toast';
 import { Button } from "../../../globalStyles";
 import { useAuth } from "../../../contexts/AuthContext"
 import { Link } from "react-router-dom"
@@ -14,21 +15,17 @@ import {
 export default function ForgotPassword() {
     const emailRef = useRef()
     const { resetPassword } = useAuth()
-    const [error, setError] = useState("")
-    const [message, setMessage] = useState("")
     const [loading, setLoading] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
 
         try {
-            setMessage("")
-            setError("")
             setLoading(true)
             await resetPassword(emailRef.current.value)
-            setMessage("Check your inbox for further instructions!")
+            toast("Check your inbox for further instructions!", { icon: "✈️"})
         } catch {
-            setError("Failed to reset password.")
+            toast.error("Failed to reset password—check if your email is correct.")
         }
 
         setLoading(false)
@@ -36,10 +33,12 @@ export default function ForgotPassword() {
 
     return (
         <>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <ForgotSec>
                 <Heading>Password Reset</Heading>
-                {error && [error]}
-                {message && [message]}
                 <ForgotCard>
                     <ForgotForm onSubmit={handleSubmit}>
                         <ForgotInput type="email" ref={emailRef} placeholder="email" required />
