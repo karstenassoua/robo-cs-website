@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom"
+import React, { useState } from "react";
+import { useAuth } from "../../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "../../../globalStyles";
 import {
   FaDiscord,
@@ -19,14 +20,36 @@ import {
 } from "./Footer.elements";
 
 function Footer() {
+  const { currentUser, logout } = useAuth();
+  const [error, setError] = useState();
+  const history = useHistory()
+
+  async function handleLogout() {
+    setError("")
+
+    try {
+      await logout()
+      history.push("/login")
+    } catch {
+      setError("Failed to log out :(")
+    }
+  }
+
   return (
     <FooterContainer>
+      {error && [error]}
       <SocialMedia>
         <SocialMediaWrap>
           <WebsiteRights>Robinson Computer Science Club © 2020</WebsiteRights>
-          <Link to="/login">
-            <Button primary>LOG IN</Button>
-          </Link>
+          {currentUser ? 
+            <Link onClick={handleLogout}>
+              <Button primary>LOG OUT</Button>
+            </Link>
+            :
+            <Link to="/login">
+              <Button primary>LOG IN</Button>
+            </Link>
+          }
           <SocialIcons>
             <SocialIconLink
               href="https://discord.com/invite/bNfwGJQH9e"

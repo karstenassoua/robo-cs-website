@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from "../../../contexts/AuthContext"
+import { useHistory } from "react-router-dom"
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../../globalStyles';
@@ -16,8 +18,11 @@ import {
 } from './Navbar.elements';
 
 function Navbar() {
+  const { currentUser, logout } = useAuth();
+  const [error, setError] = useState("")
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const history = useHistory()
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -30,17 +35,29 @@ function Navbar() {
     }
   };
 
+  async function handleLogout() {
+    setError("")
+
+    try {
+      await logout()
+      history.push("/login")
+    } catch {
+      setError("Failed to log out :(")
+    }
+  }
+
   useEffect(() => {
     showButton();
   }, []);
 
   window.addEventListener('resize', showButton);
 
-  return (
+return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <Nav>
           <NavbarContainer>
+            {error && [error]}
             <NavLogo to="/">
               <NavIcon src={require("../../../images/robo-logo-circle.png").default} alt="ROBO CS" />
             </NavLogo>
@@ -60,30 +77,66 @@ function Navbar() {
               <NavItem>
                 <NavLinks to="/about">About</NavLinks>
               </NavItem>
-              <NavItemBtn>
-                {button ? (
-                  <NavBtnLink to="/login">
-                    <Button primary>LOG IN</Button>
-                  </NavBtnLink>
-                ) : (
-                  <NavBtnLink top="/login">
-                    <Button onClick={closeMobileMenu} primary>
-                      JOIN
-                    </Button>
-                  </NavBtnLink>
-                )}
-              </NavItemBtn>
-              <NavItemBtn>
-                {button ? (
-                  <NavBtnLink to="/signup">
-                    <Button primary>SIGN UP</Button>
-                  </NavBtnLink>
-                ) : (
-                  <NavBtnLink top="/signup">
-                    <Button onClick={closeMobileMenu}>SIGN UP</Button>
-                  </NavBtnLink>
-                )}
-              </NavItemBtn>
+              {currentUser ? 
+              (
+                <>
+                  <NavItemBtn>
+                    {button ? (
+                      <NavBtnLink to="/dashboard">
+                        <Button primary>ACCOUNT</Button>
+                      </NavBtnLink>
+                    ) : (
+                      <NavBtnLink to="/dashboard">
+                        <Button onClick={closeMobileMenu} primary>
+                          ACCOUNT
+                        </Button>
+                      </NavBtnLink>
+                    )}
+                  </NavItemBtn>
+                  <NavItemBtn>
+                    {button ? (
+                      <NavBtnLink onClick={handleLogout}>
+                        <Button primary>LOGOUT</Button>
+                      </NavBtnLink>
+                    ) : (
+                      <NavBtnLink onClick={handleLogout}>
+                        <Button onClick={closeMobileMenu} primary>
+                          LOGOUT
+                        </Button>
+                      </NavBtnLink>
+                    )}
+                  </NavItemBtn>
+                </>
+              ) : (
+                <>
+                  <NavItemBtn>
+                    {button ? (
+                      <NavBtnLink to="/login">
+                        <Button primary>LOG IN</Button>
+                      </NavBtnLink>
+                    ) : (
+                      <NavBtnLink to="/login">
+                        <Button onClick={closeMobileMenu} primary>
+                          JOIN
+                        </Button>
+                      </NavBtnLink>
+                    )}
+                  </NavItemBtn>
+                                    <NavItemBtn>
+                    {button ? (
+                      <NavBtnLink to="/signup">
+                        <Button primary>SIGN UP</Button>
+                      </NavBtnLink>
+                    ) : (
+                      <NavBtnLink to="/signup">
+                        <Button onClick={closeMobileMenu} primary>
+                          SIGN UP
+                        </Button>
+                      </NavBtnLink>
+                    )}
+                  </NavItemBtn>
+                </>
+              )}
             </NavMenu>
           </NavbarContainer>
         </Nav>

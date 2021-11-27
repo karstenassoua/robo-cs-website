@@ -8,8 +8,8 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState()
-    const [loading, setLoading] = useState()
+    const [currentUser, setCurrentUser] = useState(null);
+    const [loading, setLoading] = useState();
 
     function signup(email, password) {
         return auth.createUserWithEmailAndPassword(email, password)
@@ -37,12 +37,12 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-            setLoading(false)
-        })
-
-        return unsubscribe
-    }, [])
+            setCurrentUser(user);
+            setLoading(false);
+        });
+        return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const value = {
         currentUser,
@@ -51,7 +51,7 @@ export function AuthProvider({ children }) {
         resetPassword,
         updateEmail,
         updatePassword,
-        signup
+        signup,
     }
 
     return (

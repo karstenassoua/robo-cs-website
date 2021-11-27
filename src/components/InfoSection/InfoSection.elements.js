@@ -108,3 +108,9 @@ export const Subtitle = styled.p`
 export const br = styled.div`
 min-height: 100px;
 `;
+
+export const InfoLink = styled.a`
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 25px;
+`;

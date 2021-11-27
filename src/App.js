@@ -15,7 +15,6 @@ import Signup from "./components/authcomponents/Signup/Signup"
 import Dashboard from "./components/authcomponents/Dashboard/Dashboard"
 
 import UpdateProfile from "./components/authcomponents/UpdateProfile/UpdateProfile"
-// import { Container } from "react-bootstrap";
 import PrivateRoute from "./components/PrivateRoute"
 import ForgotPassword from "./components/authcomponents/ForgotPassword/ForgotPassword"
 
@@ -24,22 +23,22 @@ function App() {
     <Router>
       <GlobalStyle />
       <ScrollToTop />
-      <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home}></Route>
-        <Route path="/events" exact component={Events}></Route>
-        <Route path="/about" exact component={About}></Route>
-      </Switch>
       <AuthProvider>
+        <Navbar />
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/login" component={Login} />
-          <Route path="/forgot-password" component={ForgotPassword} />
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/events" exact component={Events}></Route>
+          <Route path="/about" exact component={About}></Route>
         </Switch>
+          <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          </Switch>
+        <Footer />
       </AuthProvider>
-      <Footer />
     </Router>
   );
 }

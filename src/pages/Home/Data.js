@@ -26,10 +26,12 @@ export const homeObjOne = {
   lightTextDesc: true,
   topLine: "Build your passion",
   headline: "CREATE",
-  description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
-We work on projects relating to programming, and explore different topics of computer science.`,
+  description: `We take on several projects in coding and development over the year.
+  Members gain access to weekly coding challenges to reinforce proficiencies and unlock new skills.`,
   buttonLink: "/about",
   buttonLabel: "Learn more",
+  infoLoc: "https://tinyurl.com/robocschallenges",
+  infoLabel: "Weekly ROBO CS Code Challenges",
   imgStart: "true",
   img: require("../../images/cs-classroom.png").default,
   alt: "CS Lecture",

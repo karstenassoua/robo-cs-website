@@ -11,6 +11,7 @@ import {
   Subtitle,
   ImgWrapper,
   Img,
+  InfoLink
 } from "./InfoSection.elements";
 
 const InfoSection = ({
@@ -27,7 +28,9 @@ const InfoSection = ({
   start,
   img,
   alt,
-  buttonLink
+  buttonLink,
+  infoLoc,
+  infoLabel
 }) => {
   return (
     <>
@@ -39,6 +42,7 @@ const InfoSection = ({
                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
+                <InfoLink href={infoLoc}>{infoLabel}</InfoLink>
                 <Link to={buttonLink}>
                   <Button big primary={primary}>{buttonLabel}</Button>
                 </Link>
