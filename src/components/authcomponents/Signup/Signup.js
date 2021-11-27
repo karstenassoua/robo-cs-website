@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import toast, { Toaster } from 'react-hot-toast';
 import { Button } from "../../../globalStyles";
 import { useAuth } from "../../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
@@ -17,7 +18,6 @@ export default function Signup() {
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const { signup } = useAuth()
-    const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
@@ -25,26 +25,29 @@ export default function Signup() {
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError("Passwords do not match!")
+            toast.error("Passwords do not match!")
+            return null;
         }
 
         try {
-            setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
             history.push("/")
-
+            toast.success("Account created successfully.")
         } catch {
-            setError("Failed to create an account :(")
+            toast.error("Failed to create an account :(")
         }
         setLoading(false)
     }
 
     return (
         <>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <SignupSec>
                 <Heading>Welcome to ROBO CS!</Heading>
-                {error && [error]}
                 <SignupCard>
                     <SignupForm onSubmit={handleSubmit}>
                         <SignupInput type="email" ref={emailRef} placeholder="email" required />
