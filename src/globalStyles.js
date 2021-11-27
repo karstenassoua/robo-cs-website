@@ -59,7 +59,6 @@ export const Button = styled.button`
   cursor: pointer;
   min-width: 133.84px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-transform: uppercase;
   font-weight: 500;
   margin-right: ${({ heroButton }) => (heroButton ? "10px" : "")};
   margin-bottom: ${({ heroButton }) => (heroButton ? "10px" : "")};

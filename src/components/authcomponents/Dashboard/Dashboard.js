@@ -38,7 +38,7 @@ export default function Dashboard() {
                     <UpdateLink to="/update-profile">Update Credentials</UpdateLink>
                     <ButtonWrapper>
                         <Button big wide disabled={loading} onClick={handleLogout} type="link">
-                            Log Out
+                            LOG OUT
                         </Button>
                     </ButtonWrapper>
                 </DashCard>

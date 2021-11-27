@@ -85,12 +85,12 @@ return (
                   <NavItemBtn>
                     {button ? (
                       <NavBtnLink to="/dashboard">
-                        <Button primary>ACCOUNT</Button>
+                        <Button>{currentUser.email}</Button>
                       </NavBtnLink>
                     ) : (
                       <NavBtnLink to="/dashboard">
-                        <Button onClick={closeMobileMenu} primary>
-                          ACCOUNT
+                        <Button onClick={closeMobileMenu} >
+                          {currentUser.email}
                         </Button>
                       </NavBtnLink>
                     )}
@@ -98,12 +98,12 @@ return (
                   <NavItemBtn>
                     {button ? (
                       <NavBtnLink onClick={handleLogout}>
-                        <Button primary>LOGOUT</Button>
+                        <Button primary>LOG OUT</Button>
                       </NavBtnLink>
                     ) : (
                       <NavBtnLink onClick={handleLogout}>
                         <Button onClick={closeMobileMenu} primary>
-                          LOGOUT
+                          LOG OUT
                         </Button>
                       </NavBtnLink>
                     )}
