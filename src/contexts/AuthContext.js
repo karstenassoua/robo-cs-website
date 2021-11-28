@@ -9,6 +9,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(null);
     const [loading, setLoading] = useState();
 
     function signup(email, password) {
@@ -37,15 +38,21 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                user.getIdTokenResult().then(idTokenResult => {
+                    setIsAdmin(idTokenResult.claims.admin)
+                })
+            }
             setCurrentUser(user);
             setLoading(false);
-        });
+        })
         return unsubscribe;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const value = {
         currentUser,
+        isAdmin,
         login,
         logout,
         resetPassword,

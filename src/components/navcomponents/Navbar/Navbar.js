@@ -19,7 +19,7 @@ import {
 } from './Navbar.elements';
 
 function Navbar() {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, isAdmin } = useAuth();
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const history = useHistory()
@@ -54,7 +54,7 @@ function Navbar() {
 return (
     <>
       <Toaster
-        position="top-center"
+        position="bottom-left"
         reverseOrder={false}
       />
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -81,34 +81,79 @@ return (
               </NavItem>
               {currentUser ? 
               (
-                <>
-                  <NavItemBtn>
-                    {button ? (
-                      <NavBtnLink to="/dashboard">
-                        <Button>{currentUser.email}</Button>
-                      </NavBtnLink>
-                    ) : (
-                      <NavBtnLink to="/dashboard">
-                        <Button onClick={closeMobileMenu} >
-                          {currentUser.email}
-                        </Button>
-                      </NavBtnLink>
-                    )}
-                  </NavItemBtn>
-                  <NavItemBtn>
-                    {button ? (
-                      <NavBtnLink onClick={handleLogout}>
-                        <Button primary>LOG OUT</Button>
-                      </NavBtnLink>
-                    ) : (
-                      <NavBtnLink onClick={handleLogout}>
-                        <Button onClick={closeMobileMenu} primary>
-                          LOG OUT
-                        </Button>
-                      </NavBtnLink>
-                    )}
-                  </NavItemBtn>
-                </>
+                isAdmin ?
+                ( 
+                    <>
+                      <NavItemBtn>
+                        {button ? (
+                          <NavBtnLink to="/profile">
+                            <Button>{currentUser.email}</Button>
+                          </NavBtnLink>
+                        ) : (
+                          <NavBtnLink to="/profile">
+                            <Button onClick={closeMobileMenu} >
+                              {currentUser.email}
+                            </Button>
+                          </NavBtnLink>
+                        )}
+                      </NavItemBtn>
+                      <NavItemBtn>
+                        {button ? (
+                          <NavBtnLink to="/admin">
+                            <Button>DASHBOARD</Button>
+                          </NavBtnLink>
+                        ) : (
+                          <NavBtnLink to="/admin">
+                            <Button onClick={closeMobileMenu} primary>
+                              DASHBOARD
+                            </Button>
+                          </NavBtnLink>
+                        )}
+                      </NavItemBtn>
+                      <NavItemBtn>
+                        {button ? (
+                          <NavBtnLink onClick={handleLogout}>
+                            <Button primary>LOG OUT</Button>
+                          </NavBtnLink>
+                        ) : (
+                          <NavBtnLink onClick={handleLogout}>
+                            <Button onClick={closeMobileMenu} primary>
+                              LOG OUT
+                            </Button>
+                          </NavBtnLink>
+                        )}
+                      </NavItemBtn>
+                    </>
+                ) : (
+                  <>
+                    <NavItemBtn>
+                      {button ? (
+                        <NavBtnLink to="/profile">
+                          <Button>{currentUser.email}</Button>
+                        </NavBtnLink>
+                      ) : (
+                        <NavBtnLink to="/profile">
+                          <Button onClick={closeMobileMenu} >
+                            {currentUser.email}
+                          </Button>
+                        </NavBtnLink>
+                      )}
+                    </NavItemBtn>
+                    <NavItemBtn>
+                      {button ? (
+                        <NavBtnLink onClick={handleLogout}>
+                          <Button primary>LOG OUT</Button>
+                        </NavBtnLink>
+                      ) : (
+                        <NavBtnLink onClick={handleLogout}>
+                          <Button onClick={closeMobileMenu} primary>
+                            LOG OUT
+                          </Button>
+                        </NavBtnLink>
+                      )}
+                    </NavItemBtn>
+                  </>
+                )
               ) : (
                 <>
                   <NavItemBtn>

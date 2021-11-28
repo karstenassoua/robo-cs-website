@@ -11,6 +11,7 @@ import {
     UpdateLink,
 } from "./Dashboard.elements";
 
+
 export default function Dashboard() {
     const [loading] = useState(false)
     const { currentUser, logout } = useAuth()
@@ -29,7 +30,7 @@ export default function Dashboard() {
     return (
         <>
             <Toaster
-                position="top-center"
+                position="bottom-left"
                 reverseOrder={false}
             />
             <DashSec>

@@ -8,4 +8,5 @@ export { default as Footer } from "./navcomponents/Footer/Footer";
 export { default as Signup } from "./authcomponents/Login/Login";
 export { default as Login } from "./authcomponents/Signup/Signup"
 export { default as Dashboard } from "./authcomponents/Dashboard/Dashboard"
+export { default as AdminDash } from "./authcomponents/AdminDash/AdminDash"
 export { default as ForgotPassword } from "./authcomponents/ForgotPassword/ForgotPassword";;

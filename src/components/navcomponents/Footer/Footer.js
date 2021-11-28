@@ -1,7 +1,6 @@
 import React from "react";
-import toast, { Toaster } from 'react-hot-toast';
 import { useAuth } from "../../../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../../../globalStyles";
 import {
   FaDiscord,
@@ -21,32 +20,17 @@ import {
 } from "./Footer.elements";
 
 function Footer() {
-  const { currentUser, logout } = useAuth();
-  const history = useHistory()
-
-  async function handleLogout() {
-    try {
-      await logout()
-      history.push("/login")
-      toast.success("Logged out.")
-    } catch {
-      toast.error("Failed to log out :(")
-    }
-  }
+  const { currentUser } = useAuth();
 
   return (
   <>
-    <Toaster
-      position="top-center"
-      reverseOrder={false}
-    />
     <FooterContainer>
       <SocialMedia>
         <SocialMediaWrap>
           <WebsiteRights>Robinson Computer Science Club © 2020</WebsiteRights>
           {currentUser ? 
-            <Link onClick={handleLogout}>
-              <Button primary>LOG OUT</Button>
+            <Link to="/profile">
+              <Button primary>PROFILE</Button>
             </Link>
             :
             <Link to="/login">

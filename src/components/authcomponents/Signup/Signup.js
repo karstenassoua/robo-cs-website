@@ -32,7 +32,7 @@ export default function Signup() {
         try {
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/profile")
             toast.success("Account created successfully.")
         } catch {
             toast.error("Failed to create an account :(")
@@ -43,7 +43,7 @@ export default function Signup() {
     return (
         <>
             <Toaster
-                position="top-center"
+                position="bottom-left"
                 reverseOrder={false}
             />
             <SignupSec>
@@ -55,7 +55,7 @@ export default function Signup() {
                         <SignupInput type="password" ref={passwordConfirmRef} placeholder="confirm password" required />
                         <ButtonWrapper>
                             <Button big wide disabled={loading} type="submit">
-                                Sign up
+                                SIGN UP
                             </Button>
                         </ButtonWrapper>
                     </SignupForm>

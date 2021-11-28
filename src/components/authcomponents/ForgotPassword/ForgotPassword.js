@@ -34,7 +34,7 @@ export default function ForgotPassword() {
     return (
         <>
             <Toaster
-                position="top-center"
+                position="bottom-left"
                 reverseOrder={false}
             />
             <ForgotSec>

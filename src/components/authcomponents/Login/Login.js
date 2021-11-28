@@ -26,7 +26,7 @@ export default function Login() {
         try {
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/dashboard")
+            history.push("/profile")
             toast.success("Successfully logged in.")
         } catch {
             toast.error("Failed to log in. Make sure your email and password are correct.")
@@ -38,7 +38,7 @@ export default function Login() {
     return (
         <>
             <Toaster
-                position="top-center"
+                position="bottom-left"
                 reverseOrder={false}
             />
             <LoginSec>
@@ -49,7 +49,7 @@ export default function Login() {
                             <LoginInput type="password" ref={passwordRef} placeholder="password (6+ characters)" required />
                             <ButtonWrapper>
                                 <Button big wide disabled={loading} type="submit">
-                                    Log in
+                                    LOG IN
                                 </Button>
                             </ButtonWrapper>
                         </LoginForm>

@@ -53,7 +53,7 @@ export default function Signup() {
     return (
         <>
             <Toaster
-                position="top-center"
+                position="bottom-left"
                 reverseOrder={false}
             />
             <UpdateSec>
@@ -67,7 +67,7 @@ export default function Signup() {
                             <Button disabled={loading} type="submit">Update</Button>
                         </ButtonWrapper>
                     </UpdateForm>
-                    <CancelLink to="/dashboard">Cancel</CancelLink>
+                    <CancelLink to="/profile">Cancel</CancelLink>
                 </UpdateCard>
             </UpdateSec>
         </>
