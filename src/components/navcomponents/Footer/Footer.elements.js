@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+// Creating custom components using the styled-components library
 export const FooterContainer = styled.div`
   background-color: #012053;
   padding: 10px;
@@ -8,6 +9,7 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   bottom: 0;
 `;
 

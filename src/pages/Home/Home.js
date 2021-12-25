@@ -7,7 +7,8 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 const Home = () => {
   return (
     <>
-    <ScrollToTop />
+      <ScrollToTop /> {/* Including the ScrollToTop component above all others. */}
+      {/* Calling InfoSection and HeroSection (landing page) components and passing properties to them */}
       <HeroSection {...heroObjOne}></HeroSection>
       <InfoSection {...homeObjOne}></InfoSection>
       <InfoSection {...homeObjTwo}></InfoSection>

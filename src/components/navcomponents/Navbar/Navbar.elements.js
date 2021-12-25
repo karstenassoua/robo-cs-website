@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Container } from "../../../globalStyles";
 
+// Creating custom components using the styled-components library
 export const Nav = styled.nav`
   background: #012053;
   height: 100px;

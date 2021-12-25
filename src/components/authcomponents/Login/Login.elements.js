@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
+// Creating custom components using the styled-components library
 export const LoginSec = styled.div`
   color: #fff;
   padding: 100px 0;
-  margin-bottom: 50px;
+  margin-bottom: 6.9vh;
   align-items: center;
   justify-content: center;
   text-align: center;

@@ -11,9 +11,15 @@ import {
   Role,
 } from "./OfficerBlock.elements";
 
+// See above, IA - Key Elements: File Input/Output:
+// Importing necessary styles from external files
+
+// Creating OfficerBlock subcomponent
 const OfficerBlock = ({ img, alt, href1, href2, name, role }) => {
   return (
     <>
+      {/* Creating the rest of the component's display using styled components 
+      // Referenced values in curly brackets will receive data from objects the Data.js file */}
       <OfficerContainer>
         <ImgWrapper>
           <Img src={img} alt={alt} />

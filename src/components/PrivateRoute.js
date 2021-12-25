@@ -2,6 +2,9 @@ import React from 'react'
 import { Route, Redirect } from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext"
 
+// Defining a component that protects private pages by redirecting 
+// unauthenticated users to the login page
+
 export default function PrivateRoute({ component: Component, ...rest }) {
     const { currentUser } = useAuth()
 

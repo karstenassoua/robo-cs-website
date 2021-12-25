@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Creating custom components using the styled-components library
 export const OfficerContainer = styled.div`
   background-color: #fff;
   max-width: 40%;
@@ -10,11 +11,10 @@ export const OfficerContainer = styled.div`
   padding: 27px;
   text-align: center;
 
-  /* &:hover {
+  &:hover {
     transition: all 0.3s ease-out;
     transform: scale(1.07);
-    border: 3px solid #04509d;
-  } */
+  }
 `;
 export const ImgWrapper = styled.div``;
 

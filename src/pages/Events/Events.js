@@ -7,9 +7,11 @@ import FeaturedSection from "../../components/FeaturedSection/FeaturedSection";
 const Events = () => {
   return (
     <>
-      <ScrollToTop />
+      <ScrollToTop /> {/* Including the ScrollToTop component above all others. */}
+      {/* Calling InfoSection and FeaturedSection (landing page) components and passing properties to them */}
       <FeaturedSection {...featObjOne}></FeaturedSection>
       <InfoSection {...eventsObjOne}></InfoSection>
+      {/* Embedding a calendar and event countdown for users to read. */}
       <iframe title="Midterm Timer" src="https://indify.co/widgets/live/countdown/RQLmsoTMQZCNPe3WCdOo" style={{ border: "0", marginLeft: "5%", marginRight: "5%", marginBottom: "18%", display: "inline", width: "400px", height: "100px", borderRadius: "20px", scrolling: "no" }}></iframe>
       <iframe title="ROBO CS Calendar" src="https://indify.co/widgets/live/calendar/GI73hCK8fGgT451Nu9tW" style={{ border: "0", width: "800px", height: "600px", borderRadius: "20px" }}></iframe>
       <div style={{ display: "flex", justifyContent: "center", margin: "50px 0px" }}>
