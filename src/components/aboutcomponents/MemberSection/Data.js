@@ -14,3 +14,12 @@ export const officerObjTwo = {
   href2: "https://google.com"
 
 };
+
+export const officerObjThree = {
+  img: require("../../../images/ram-placeholder.png").default,
+  name: "Ethan Coon",
+  role: "Secretary",
+  href1: "",
+  href2: "https://google.com"
+
+};

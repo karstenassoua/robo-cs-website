@@ -14,7 +14,6 @@ export const MemberSec = styled.div`
 `;
 
 export const MemberRow = styled.div`
-  display: flex;
   margin: 0 -15px -15px -15px;
   flex-wrap: wrap;
   align-items: center;
@@ -22,11 +21,12 @@ export const MemberRow = styled.div`
 `;
 
 export const MemberColumn  = styled.div`
-display: inline-block;
-  margin-bottom: 15px;
+  display: inline-block;
+  margin-bottom: 70px;
   padding-right: 15px;
   padding-left: 35px;
   flex: 1;
+  white-space: nowrap;
   max-width: 50%;
   flex-basis: 50%;
 
@@ -45,7 +45,7 @@ display: inline-block;
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 20px;
-  align-self: center;
+  margin-right: 20px;
 
   @media screen and (max-width: 1050px) {
     transform: scale(0.999);

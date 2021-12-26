@@ -9,6 +9,7 @@ import {
   TextWrapper,
   Name,
   Role,
+  OfficerBioLink,
 } from "./OfficerBlock.elements";
 
 const OfficerBlock = ({ img, alt, href1, href2, name, role }) => {
@@ -28,6 +29,7 @@ const OfficerBlock = ({ img, alt, href1, href2, name, role }) => {
           <Name>{name}</Name>
           <Role>{role}</Role>
         </TextWrapper>
+        <OfficerBioLink>Read More</OfficerBioLink>
       </OfficerContainer>
     </>
   );

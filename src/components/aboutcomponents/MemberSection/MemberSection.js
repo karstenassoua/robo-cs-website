@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../../../globalStyles";
-import { officerObjOne, officerObjTwo } from "./Data"
+import { officerObjOne, officerObjTwo, officerObjThree } from "./Data"
 import OfficerBlock from "../OfficerBlock/OfficerBlock";
 import {
   MemberSec,
@@ -30,6 +30,7 @@ const MemberSection = ({
             <MemberColumn>
               <OfficerBlock {...officerObjOne}></OfficerBlock>
               <OfficerBlock {...officerObjTwo}></OfficerBlock>
+              <OfficerBlock {...officerObjThree}></OfficerBlock>
             </MemberColumn>
           </MemberRow>
         </Container>
