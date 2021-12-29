@@ -13,6 +13,10 @@ import {
   EventArrow
 } from "./FeaturedSection.elements";
 
+// See above, IA - Key Elements: File Input/Output:
+// Importing necessary styles from external files
+
+// Creating "Featured" component
 const FeaturedSection = ({
   lightBg,
   imgStart,
@@ -28,6 +32,8 @@ const FeaturedSection = ({
 }) => {
   return (
     <>
+      {/* Creating the rest of the component's display using styled components 
+      // Referenced values in curly brackets will receive data from objects in each page's Data.js file */}
       <FeatSec lightBg={lightBg}>
         <Container>
           <FeatRow imgStart={imgStart}>

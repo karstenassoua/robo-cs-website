@@ -11,6 +11,10 @@ import {
   Subtitle,
 } from "./MemberSection.elements";
 
+// See above, IA - Key Elements: File Input/Output:
+// Importing necessary styles from external files
+
+// Creating MemberSection component
 const MemberSection = ({
   textStart,
   description,
@@ -18,6 +22,8 @@ const MemberSection = ({
 }) => {
   return (
     <>
+      {/* Creating the rest of the component's display using styled components 
+      // Referenced values in curly brackets will receive data from objects the Data.js file */}
       <MemberSec>
         <Container>
           <MemberRow textStart={textStart}>

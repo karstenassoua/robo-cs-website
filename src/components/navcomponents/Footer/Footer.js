@@ -5,9 +5,8 @@ import { Button } from "../../../globalStyles";
 import {
   FaDiscord,
   FaInstagram,
-  FaYoutube,
   FaTwitter,
-  FaGithub,
+  FaMediumM,
 } from "react-icons/fa";
 import {
   FooterContainer,
@@ -19,11 +18,17 @@ import {
   EmailLink,
 } from "./Footer.elements";
 
+// See above, IA - Key Elements: File Input/Output:
+// Importing necessary styles from external files
+
+// Creating the Footer component
 function Footer() {
+  // Drawing the currentUser information from AuthContext with the useAuth hook
   const { currentUser } = useAuth();
 
   return (
   <>
+    {/* Creating the rest of the component's display using styled components */}
     <FooterContainer>
       <SocialMedia>
         <SocialMediaWrap>
@@ -45,16 +50,11 @@ function Footer() {
             >
               <FaDiscord />
             </SocialIconLink>
-            <SocialIconLink href="/" target="_blank" aria-label="Instagram">
+            <SocialIconLink 
+                href="https://www.instagram.com/robo_compsci/"
+              target="_blank" 
+              aria-label="Instagram">
               <FaInstagram />
-            </SocialIconLink>
-            <SocialIconLink
-              href={"/"}
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="YouTube"
-            >
-              <FaYoutube />
             </SocialIconLink>
             <SocialIconLink
               href="https://mobile.twitter.com/ROBO_CS"
@@ -63,9 +63,13 @@ function Footer() {
             >
               <FaTwitter />
             </SocialIconLink>
-            <SocialIconLink href="/" target="_blank" aria-label="Github">
-              <FaGithub />
-            </SocialIconLink>
+            <SocialIconLink 
+              href="https://medium.com/@robocompsci" 
+              target="_blank" 
+              aria-label="Medium"
+              >
+            <FaMediumM />
+          </SocialIconLink>
           </SocialIcons>
           <EmailLink href="emailto:robocs@gmail.com">email us at robocs@gmail.com</EmailLink>
         </SocialMediaWrap>

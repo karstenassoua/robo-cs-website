@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Creating custom components using the styled-components library
 export const MemberSec = styled.div`
   background-color: #fdc500;
   padding: 130px 0;

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+// Creating components using the styled-components library
 export const UpdateSec = styled.div`
   color: #fff;
-  padding: 100px 0;
-  margin-bottom: 50px;
+  padding: 70px 0;
+  margin-bottom: 7.2vh;
   align-items: center;
   justify-content: center;
   text-align: center;

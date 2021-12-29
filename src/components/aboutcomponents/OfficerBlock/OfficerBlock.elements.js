@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Creating custom components using the styled-components library
 export const OfficerContainer = styled.div`
   background-color: #fff;
   max-width: 40%;

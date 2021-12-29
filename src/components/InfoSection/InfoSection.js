@@ -14,6 +14,10 @@ import {
   InfoLink
 } from "./InfoSection.elements";
 
+// See above, IA - Key Elements: File Input/Output:
+// Importing necessary styles from external files
+
+// Creating information section component
 const InfoSection = ({
   lightBg,
   imgStart,
@@ -34,6 +38,8 @@ const InfoSection = ({
 }) => {
   return (
     <>
+      {/* Creating the rest of the component's display using styled components 
+      // Referenced values in curly brackets will receive data from objects in each page's Data.js file */}
       <InfoSec lightBg={lightBg}>
         <Container>
           <InfoRow imgStart={imgStart}>

@@ -1,17 +1,22 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { auth } from "../firebase"
 
+// Creating a context "umbrella" to encapsulate the whole application
+// This context is important because it informs components of authentication changes
 const AuthContext = React.createContext()
 
+// Creating a function components can use to check auth state
 export function useAuth() {
     return useContext(AuthContext)
 }
 
 export function AuthProvider({ children }) {
+    // Defining different states using React's useState
     const [currentUser, setCurrentUser] = useState(null);
     const [isAdmin, setIsAdmin] = useState(null);
     const [loading, setLoading] = useState();
 
+    // Defining authentication functions like logout, signup, etc. for users
     function signup(email, password) {
         return auth.createUserWithEmailAndPassword(email, password)
     }
@@ -36,6 +41,7 @@ export function AuthProvider({ children }) {
         return currentUser.updatePassword(password)
     }
 
+    // Using React's useEffect to create a side effect when the user's auth state changes
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
@@ -49,7 +55,7 @@ export function AuthProvider({ children }) {
         return unsubscribe;
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
+    
     const value = {
         currentUser,
         isAdmin,
@@ -61,6 +67,7 @@ export function AuthProvider({ children }) {
         signup,
     }
 
+    // Shipping all necessary authentication information using the value object
     return (
         <AuthContext.Provider value={value}>
             {!loading && children}

@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
+// Defining app-wide styles for containers, buttons, and other elements 
+
 const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
@@ -14,20 +16,17 @@ body {
     background-image: url("https://i.imgur.com/ZCHxoGV.png?1");
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 6px; // Changing the scrollbar's width
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #fff;
+::-webkit-scrollbar-thumb {  
+  background: #fff; // Changing the scrollbar's handle
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #FDC500;
+  background: #FDC500; // Changing the scrollbar's handle when hovered over
 }
 `;
 

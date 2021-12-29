@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Creating components using the styled-components library
 export const SignupSec = styled.div`
   color: #fff;
   padding: 100px 0;

@@ -1,3 +1,6 @@
+// IA - Data Structures
+// Creating four objects with data to provide the MemberSection component
+
 export const officerObjOne = {
   img: require("../../../images/ram-placeholder.png").default,
   name: "Karsten Assoua",

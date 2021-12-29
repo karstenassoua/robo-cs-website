@@ -1,3 +1,6 @@
+// IA - Data Structures
+// Creating four objects with data to provide the About component
+
 export const aboutObjOne = {
   primary: true,
   lightBg: false,

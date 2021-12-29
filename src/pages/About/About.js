@@ -8,8 +8,9 @@ import MemberSection from "../../components/aboutcomponents/MemberSection/Member
 const About = () => {
   return (
     <>
-      <ScrollToTop />
-      <StatSection />
+      <ScrollToTop /> {/* Including the ScrollToTop component above all others. */}
+      {/* Calling InfoSection and MemberSection, and StatSection (statistcs) components and passing properties to them */}
+      <StatSection /> 
       <InfoSection {...aboutObjOne}></InfoSection>
       <MemberSection {...aboutObjTwo}></MemberSection>
     </>

@@ -1,3 +1,6 @@
+// IA - Data Structures
+// Creating four objects with data to provide the Home component
+
 export const heroObjOne = {
   primary: true,
   lightBg: false,
@@ -13,7 +16,7 @@ export const heroObjOne = {
   buttonLink2: "/events",
   imgStart: "",  // Empty: image right, "True": image left
   img: require("../../images/ram-code-new.svg").default,
-  alt: "Credit Card",
+  alt: "Rams coding",
   start: "true",
   heroButton: true,
 };
@@ -66,7 +69,7 @@ export const homeObjThree = {
   headline: "EXPLORE",
   description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
 We work on projects relating to programming, and explore different topics of computer science.`,
-  buttonLink: "/about",
+  buttonLink: "/updates",
   buttonLabel: "SEE UPDATES",
   imgStart: "start",
   img: require("../../images/cs-lecture.jpeg").default,

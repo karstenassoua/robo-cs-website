@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+// Creating custom components using the styled-components library
 export const DashSec = styled.div`
   color: #fff;
   padding: 100px 0;

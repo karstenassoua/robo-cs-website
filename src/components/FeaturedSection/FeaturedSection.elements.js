@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Creating custom components using the styled-components library
 export const FeatSec = styled.div`
   color: #fff;
   padding: 130px 0;

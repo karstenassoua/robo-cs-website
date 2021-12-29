@@ -1,3 +1,6 @@
+// IA - Data Structures
+// Creating four objects with data to provide the Events component
+
 export const featObjOne = {
   primary: true,
   lightBg: false,

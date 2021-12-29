@@ -13,6 +13,10 @@ import {
   Img,
 } from "./HeroSection.elements";
 
+// See above, IA - Key Elements: File Input/Output:
+// Importing necessary styles from external files
+
+// Creating HeroSection component
 const HeroSection = ({
   lightBg,
   imgStart,
@@ -32,6 +36,8 @@ const HeroSection = ({
 }) => {
   return (
     <>
+      {/* Creating the rest of the component's display using styled components 
+      // Referenced values in curly brackets will receive data from objects in each page's Data.js file */}
       <HeroSec lightBg={lightBg}>
         <Container>
           <HeroRow imgStart={imgStart}>

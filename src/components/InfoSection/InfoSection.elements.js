@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Creating custom components using the styled-components library
 export const InfoSec = styled.div`
   color: #fff;
   padding: 100px 0;
