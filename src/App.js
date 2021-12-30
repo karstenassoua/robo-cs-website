@@ -17,6 +17,7 @@ import AdminDash from "./components/authcomponents/AdminDash/AdminDash"
 
 import UpdateProfile from "./components/authcomponents/UpdateProfile/UpdateProfile"
 import PrivateRoute from "./components/PrivateRoute"
+import PublicRoute from "./components/PublicRoute"
 import ForgotPassword from "./components/authcomponents/ForgotPassword/ForgotPassword"
 
 // Defining the core app component, which will be rendered when the website is opened.
@@ -49,7 +50,7 @@ function App() {
             <PrivateRoute exact path="/admin" component={AdminDash} />
             <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
             <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
+            <PublicRoute path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
             {/* Redirecting all other paths to the home page. */}
             <Route path='*'><Redirect to='/' /></Route>
