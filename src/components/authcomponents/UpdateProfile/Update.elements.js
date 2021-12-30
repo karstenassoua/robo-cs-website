@@ -53,10 +53,10 @@ export const UpdateCard = styled.div`
     }
 `;
 
-export const UpdateForm = styled.form`
+export const CredsForm = styled.form`
 `;
 
-export const UpdateInput = styled.input`
+export const CredsInput = styled.input`
     display: block;
     width: 400px;
     margin-top: 10px;
@@ -69,4 +69,37 @@ export const UpdateInput = styled.input`
 `;
 
 export const CancelLink = styled(Link)`
+`;
+
+export const ProfileForm = styled.form`
+`;
+
+export const ProfileLabel = styled.label`
+    color: #00509D;
+    font-weight: bold;
+    margin-right: 10px;
+`;
+
+export const ProfileInput = styled.input`
+    display: inline-block;
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+    height: 40px;
+    color: #000000;
+`;
+
+export const BioInput = styled.textarea`
+    display: inline-block;
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+    height: 100px;
+    color: #000000;
 `;

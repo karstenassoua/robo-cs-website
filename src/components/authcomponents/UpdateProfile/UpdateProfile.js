@@ -4,10 +4,14 @@ import { Button } from "../../../globalStyles"
 import { useAuth } from "../../../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
 import {
-    UpdateForm,
-    UpdateInput,
+    CredsForm,
+    CredsInput,
     UpdateSec,
     UpdateCard,
+    ProfileForm,
+    ProfileInput,
+    BioInput,
+    ProfileLabel,
     Heading,
     ButtonWrapper,
     CancelLink,
@@ -20,18 +24,35 @@ import {
 export default function Signup() {
 
     // Creating Refs to hold data from input fields
+    const yearRef = useRef()
+    const interestsRef = useRef()
+    const bioRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
 
     // Drawing data from the AuthContext & defining a loading state
-    const { currentUser, updatePassword, updateEmail } = useAuth()
+    const { currentUser, updatePassword, updateEmail, updateProfile } = useAuth()
     const [loading, setLoading] = useState(false)
 
     const history = useHistory()
 
-    // Defining a function to be called on update profile form submit
-    function handleSubmit(e) {
+    // Defining functions to be called on update profile form submit
+    async function handleProfileSubmit(e) {
+        e.preventDefault()
+        setLoading(true)
+
+        try {
+            await updateProfile(yearRef.current.value, interestsRef.current.value, bioRef.current.value)
+            toast.success("Updated successfully! :D")
+        } catch {
+            // IA - Key Algorithms: Sending an error message
+            toast.error("Failed to update profile.")
+        }
+        setLoading(false)
+    }
+
+    function handleCredsSubmit(e) {
         e.preventDefault()
 
         // If the confirmed password is not equal to the first password
@@ -79,14 +100,29 @@ export default function Signup() {
             <UpdateSec>
                 <Heading>Update Profile</Heading>
                 <UpdateCard>
-                    <UpdateForm onSubmit={handleSubmit}>
-                        <UpdateInput type="email" ref={emailRef} required placeholder={currentUser.email} />
-                        <UpdateInput type="password" ref={passwordRef} placeholder="Leave blank to keep the same. (6+ characters)" />
-                        <UpdateInput type="password" ref={passwordConfirmRef} placeholder="Leave blank to keep the same." />
+                    <ProfileForm onSubmit={handleProfileSubmit}>
+                        <ProfileLabel for="yearselect">What grade are you in?</ProfileLabel>
+                        <select name="yearselect" type="" ref={yearRef}>
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Alumni">Alumni</option>
+                        </select>
+                        <ProfileInput type="text" ref={interestsRef} required placeholder="What are you interested in?" />
+                        <BioInput type="text" ref={bioRef} rows="5" cols="80" required placeholder="Add a little about you..." />
                         <ButtonWrapper>
-                            <Button disabled={loading} type="submit">Update</Button>
+                            <Button disabled={loading} type="submit">UPDATE PROFILE</Button>
                         </ButtonWrapper>
-                    </UpdateForm>
+                    </ProfileForm>
+                    <CredsForm onSubmit={handleCredsSubmit}>
+                        <CredsInput type="email" ref={emailRef} required placeholder={currentUser.email} />
+                        <CredsInput type="password" ref={passwordRef} placeholder="Leave blank to keep the same. (6+ characters)" />
+                        <CredsInput type="password" ref={passwordConfirmRef} placeholder="Leave blank to keep the same." />
+                        <ButtonWrapper>
+                            <Button disabled={loading} type="submit">UPDATE CREDENTIALS</Button>
+                        </ButtonWrapper>
+                    </CredsForm>
                     <CancelLink to="/profile">Cancel</CancelLink>
                 </UpdateCard>
             </UpdateSec>

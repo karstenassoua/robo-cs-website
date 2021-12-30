@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 // Creating custom components using the styled-components library
 export const DashSec = styled.div`
   color: #fff;
-  padding: 100px 0;
-  margin-bottom: 50px;
+  padding: 70px 0;
+  margin-top: 4vh;
+  margin-bottom: 20vh;
   align-items: center;
   justify-content: center;
   text-align: center;

@@ -56,18 +56,3 @@ export const DashCard = styled.div`
 export const UpdateLink = styled(Link)`
     color: #fff;
 `;
-
-export const PromoteForm = styled.form`
-`;
-
-export const PromoteInput = styled.input`
-    display: block;
-    width: 400px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border-style: none;
-    padding: 10px;
-    height: 40px;
-    color: #000000;
-`;

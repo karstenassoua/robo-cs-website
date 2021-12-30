@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/functions';
+import 'firebase/compat/firestore';
 
 // Initalizing Firebase with required IDs from project
 const app = firebase.initializeApp({
@@ -15,4 +16,5 @@ const app = firebase.initializeApp({
 // Exporting necessary utilities from Firebase
 export const auth = app.auth();
 export const functions = app.functions();
+export const db = app.firestore();
 export default app

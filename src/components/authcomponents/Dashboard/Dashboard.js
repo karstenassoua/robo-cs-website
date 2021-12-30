@@ -45,7 +45,7 @@ export default function Dashboard() {
                 // Concatenating the dynamic value of the user's email with a hello message */}
                 <Heading>Hello, {currentUser.email}!</Heading>
                 <DashCard>
-                    <UpdateLink to="/update-profile">Update Credentials</UpdateLink>
+                    <UpdateLink to="/update-profile">Update Profile</UpdateLink>
                     <ButtonWrapper>
                         <Button big wide disabled={loading} onClick={handleLogout} type="link">
                             LOG OUT
