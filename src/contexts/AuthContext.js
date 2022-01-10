@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
     const [isAdmin, setIsAdmin] = useState(null);
     const [loading, setLoading] = useState();
 
+    // Important: Defining a function for signup, which adds the user to the database
     function signup(email, password) {
         return auth.createUserWithEmailAndPassword(email, password).then(cred => {
             return db.collection("users").doc(cred.user.uid).set({
@@ -22,6 +23,7 @@ export function AuthProvider({ children }) {
         });
     }
 
+    // Important: Defining a function for profile update
     function updateProfile(year, interests, biography) {
         return db.collection("users").doc(currentUser.uid).set({
             year: year,

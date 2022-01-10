@@ -8,7 +8,6 @@ import {
     DashCard,
     Heading,
     ButtonWrapper,
-    UpdateLink,
 } from "./Dashboard.elements";
 
 // See above, IA - Key Elements: File Input/Output:
@@ -21,6 +20,12 @@ export default function Dashboard() {
     const history = useHistory()
 
     // Defining a function to be called on logout
+    // and one to help send users to the update profile page
+
+    async function sendToUpdateProfile() {
+        history.push("/update-profile")
+    }
+
     async function handleLogout() {
         try {
             await logout()
@@ -45,9 +50,13 @@ export default function Dashboard() {
                 // Concatenating the dynamic value of the user's email with a hello message */}
                 <Heading>Hello, {currentUser.email}!</Heading>
                 <DashCard>
-                    <UpdateLink to="/update-profile">Update Profile</UpdateLink>
                     <ButtonWrapper>
-                        <Button big wide disabled={loading} onClick={handleLogout} type="link">
+                        <Button disabled={loading} onClick={sendToUpdateProfile} type="link">
+                            UPDATE PROFILE
+                        </Button>
+                    </ButtonWrapper>
+                    <ButtonWrapper>
+                        <Button disabled={loading} onClick={handleLogout} type="link">
                             LOG OUT
                         </Button>
                     </ButtonWrapper>

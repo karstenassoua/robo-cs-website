@@ -26,6 +26,7 @@ export const LinkWrapper = styled.div`
 export const ButtonWrapper = styled.div`
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 `;
 
 export const Heading = styled.h1`

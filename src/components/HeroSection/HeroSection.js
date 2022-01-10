@@ -11,6 +11,7 @@ import {
   Subtitle,
   ImgWrapper,
   Img,
+  Arrow,
 } from "./HeroSection.elements";
 
 // See above, IA - Key Elements: File Input/Output:
@@ -55,6 +56,7 @@ const HeroSection = ({
                   <Button heroButton={heroButton}>{buttonLabel2}</Button>
                 </Link>
               </TextWrapper>
+              <Arrow src={require("../../images/small-scroll-arrow.svg").default} />
             </HeroColumn>
             <HeroColumn>
               <ImgWrapper start={start}>

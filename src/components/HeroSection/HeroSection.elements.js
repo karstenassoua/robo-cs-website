@@ -3,8 +3,7 @@ import styled from "styled-components";
 // Creating custom components using the styled-components library
 export const HeroSec = styled.div`
   color: #fff;
-  padding: 130px 0;
-  margin-bottom: 50px;
+  padding: 130px 100px;
   align-items: center;
   justify-content: center;
 `;
@@ -34,6 +33,7 @@ export const HeroColumn = styled.div`
 
 export const TextWrapper = styled.div`
   max-width: 540px;
+  margin-bottom: 60px;
   padding-top: 0;
   align-self: center;
   @media screen and (max-width: 768px) {
@@ -101,4 +101,24 @@ export const Subtitle = styled.p`
   }
 `;
 
+export const Arrow = styled.img`
+  margin-left: 35%;
+  margin-right: 60%;
+  display: block;
+  width: 7%;
+  animation: bounce 2s ease infinite;
 
+    @keyframes bounce {
+    0% {
+      transform: translateY(-10%);
+    }
+
+    50% {
+      transform: translateY(10%);
+    }
+
+    100% {
+      transform: translateY(-10%);
+    }
+  }
+`;

@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: #012053;
+    background-color: #00245e;
     height: 100%;
     background-image: url("https://i.imgur.com/ZCHxoGV.png?1");
 }

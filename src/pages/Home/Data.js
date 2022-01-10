@@ -15,7 +15,7 @@ export const heroObjOne = {
   buttonLabel2: "EVENTS",
   buttonLink2: "/events",
   imgStart: "",  // Empty: image right, "True": image left
-  img: require("../../images/ram-code-new.svg").default,
+  img: require("../../images/rams-coding-blob.png").default,
   alt: "Rams coding",
   start: "true",
   heroButton: true,

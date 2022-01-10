@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const DashSec = styled.div`
   color: #fff;
   padding: 100px 0;
-  margin-bottom: 23.2vh;
+  margin-bottom: 20.2vh;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -25,7 +25,9 @@ export const LinkWrapper = styled.div`
 
 export const ButtonWrapper = styled.div`
     align-items: center;
+    margin: 20px;
     justify-content: center;
+    display: inline-block;
 `;
 
 export const Heading = styled.h1`
