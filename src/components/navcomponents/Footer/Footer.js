@@ -32,7 +32,7 @@ function Footer() {
     <FooterContainer>
       <SocialMedia>
         <SocialMediaWrap>
-          <WebsiteRights>Robinson Computer Science Club © 2020</WebsiteRights>
+          <WebsiteRights>Robinson Computer Science Club © 2022</WebsiteRights>
           {currentUser ? 
             <Link to="/profile">
               <Button primary>PROFILE</Button>
@@ -71,7 +71,7 @@ function Footer() {
             <FaMediumM />
           </SocialIconLink>
           </SocialIcons>
-          <EmailLink href="emailto:robocs@gmail.com">email us at robocs@gmail.com</EmailLink>
+            <EmailLink href="emailto:robocompsci@gmail.com">email us at robocompsci@gmail.com</EmailLink>
         </SocialMediaWrap>
       </SocialMedia>
     </FooterContainer>

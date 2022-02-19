@@ -29,7 +29,7 @@ export const homeObjOne = {
   lightTextDesc: true,
   topLine: "Build your passion",
   headline: "CREATE",
-  description: `We take on several projects in coding and development over the year.
+  description: `We take on several projects in coding and development over the year!
   Members gain access to weekly coding challenges to reinforce proficiencies and unlock new skills.`,
   buttonLink: "/about",
   buttonLabel: "LEARN MORE",
@@ -49,8 +49,7 @@ export const homeObjTwo = {
   lightTextDesc: true,
   topLine: "Work as a team",
   headline: "COLLABORATE",
-  description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
-We work on projects relating to programming, and explore different topics of computer science.`,
+  description: `Teamwork and collaboration are at the core of everything we do at Robinson CS. Students solve coding problems in teams, learn in small groups, and put their heads together to tackle the most trying issues in the world today.`,
   buttonLink: "/about",
   buttonLabel: "ABOUT US",
   imgStart: "",
@@ -67,8 +66,7 @@ export const homeObjThree = {
   lightTextDesc: true,
   topLine: "New technologies",
   headline: "EXPLORE",
-  description: `We are the Robinson Computer Science Club, a place that harbors learning and growing as a team. 
-We work on projects relating to programming, and explore different topics of computer science.`,
+  description: `At Robinson CS, we explore new technologies and develop solutions to real-world problems. `,
   buttonLink: "/updates",
   buttonLabel: "SEE UPDATES",
   imgStart: "start",
